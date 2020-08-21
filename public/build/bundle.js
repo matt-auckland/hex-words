@@ -358,36 +358,37 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (139:2) {#if filteredWordsCount > 0}
+    // (223:4) {#if filteredWordsCount > 0}
     function create_if_block_1(ctx) {
-    	let h3;
+    	let h5;
     	let t0;
     	let t1;
     	let t2;
 
     	const block = {
     		c: function create() {
-    			h3 = element("h3");
+    			h5 = element("h5");
     			t0 = text("(");
     			t1 = text(/*filteredWordsCount*/ ctx[1]);
     			t2 = text(" words are hidden)");
-    			add_location(h3, file, 139, 4, 2752);
+    			attr_dev(h5, "class", "svelte-1mqu8d");
+    			add_location(h5, file, 223, 6, 4198);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, h3, anchor);
-    			append_dev(h3, t0);
-    			append_dev(h3, t1);
-    			append_dev(h3, t2);
+    			insert_dev(target, h5, anchor);
+    			append_dev(h5, t0);
+    			append_dev(h5, t1);
+    			append_dev(h5, t2);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*filteredWordsCount*/ 2) set_data_dev(t1, /*filteredWordsCount*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h3);
+    			if (detaching) detach_dev(h5);
     		}
     	};
 
@@ -395,28 +396,28 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(139:2) {#if filteredWordsCount > 0}",
+    		source: "(223:4) {#if filteredWordsCount > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (155:4) {#each filteredWords as word}
+    // (230:4) {#each filteredWords as word}
     function create_each_block(ctx) {
     	let div3;
     	let div0;
     	let span;
-    	let t0_value = /*word*/ ctx[10].word + "";
+    	let t0_value = /*word*/ ctx[11].word + "";
     	let t0;
     	let t1;
-    	let t2_value = /*word*/ ctx[10].leet + "";
+    	let t2_value = /*word*/ ctx[11].leet + "";
     	let t2;
     	let t3;
     	let div2;
     	let div1;
 
-    	let t4_value = (/*clickedColour*/ ctx[4] == /*word*/ ctx[10].leet
+    	let t4_value = (/*clickedColour*/ ctx[4] == /*word*/ ctx[11].leet
     	? "COPIED!"
     	: "COPY") + "";
 
@@ -439,17 +440,17 @@ var app = (function () {
     			div1 = element("div");
     			t4 = text(t4_value);
     			t5 = space();
-    			attr_dev(span, "class", "original svelte-zb4te4");
-    			add_location(span, file, 157, 10, 3170);
-    			add_location(div0, file, 156, 8, 3154);
-    			attr_dev(div1, "class", "copy-hex svelte-zb4te4");
-    			toggle_class(div1, "boop", /*clickedColour*/ ctx[4] == /*word*/ ctx[10].leet);
-    			add_location(div1, file, 161, 10, 3334);
-    			attr_dev(div2, "class", "colour svelte-zb4te4");
-    			attr_dev(div2, "style", div2_style_value = `background-color: #${/*word*/ ctx[10].leet};`);
-    			add_location(div2, file, 160, 8, 3260);
-    			attr_dev(div3, "class", "word svelte-zb4te4");
-    			add_location(div3, file, 155, 6, 3097);
+    			attr_dev(span, "class", "original svelte-1mqu8d");
+    			add_location(span, file, 232, 10, 4403);
+    			add_location(div0, file, 231, 8, 4387);
+    			attr_dev(div1, "class", "copy-hex svelte-1mqu8d");
+    			toggle_class(div1, "boop", /*clickedColour*/ ctx[4] == /*word*/ ctx[11].leet);
+    			add_location(div1, file, 236, 10, 4567);
+    			attr_dev(div2, "class", "colour svelte-1mqu8d");
+    			attr_dev(div2, "style", div2_style_value = `background-color: #${/*word*/ ctx[11].leet};`);
+    			add_location(div2, file, 235, 8, 4493);
+    			attr_dev(div3, "class", "word svelte-1mqu8d");
+    			add_location(div3, file, 230, 6, 4330);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -469,7 +470,7 @@ var app = (function () {
     					div3,
     					"click",
     					function () {
-    						if (is_function(/*copyHex*/ ctx[6](/*word*/ ctx[10].leet))) /*copyHex*/ ctx[6](/*word*/ ctx[10].leet).apply(this, arguments);
+    						if (is_function(/*copyHex*/ ctx[6](/*word*/ ctx[11].leet))) /*copyHex*/ ctx[6](/*word*/ ctx[11].leet).apply(this, arguments);
     					},
     					false,
     					false,
@@ -481,18 +482,18 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*filteredWords*/ 1 && t0_value !== (t0_value = /*word*/ ctx[10].word + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*filteredWords*/ 1 && t2_value !== (t2_value = /*word*/ ctx[10].leet + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*filteredWords*/ 1 && t0_value !== (t0_value = /*word*/ ctx[11].word + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*filteredWords*/ 1 && t2_value !== (t2_value = /*word*/ ctx[11].leet + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty & /*clickedColour, filteredWords*/ 17 && t4_value !== (t4_value = (/*clickedColour*/ ctx[4] == /*word*/ ctx[10].leet
+    			if (dirty & /*clickedColour, filteredWords*/ 17 && t4_value !== (t4_value = (/*clickedColour*/ ctx[4] == /*word*/ ctx[11].leet
     			? "COPIED!"
     			: "COPY") + "")) set_data_dev(t4, t4_value);
 
     			if (dirty & /*clickedColour, filteredWords*/ 17) {
-    				toggle_class(div1, "boop", /*clickedColour*/ ctx[4] == /*word*/ ctx[10].leet);
+    				toggle_class(div1, "boop", /*clickedColour*/ ctx[4] == /*word*/ ctx[11].leet);
     			}
 
-    			if (dirty & /*filteredWords*/ 1 && div2_style_value !== (div2_style_value = `background-color: #${/*word*/ ctx[10].leet};`)) {
+    			if (dirty & /*filteredWords*/ 1 && div2_style_value !== (div2_style_value = `background-color: #${/*word*/ ctx[11].leet};`)) {
     				attr_dev(div2, "style", div2_style_value);
     			}
     		},
@@ -507,14 +508,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(155:4) {#each filteredWords as word}",
+    		source: "(230:4) {#each filteredWords as word}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (170:2) {#if filteredWords.length == 0}
+    // (245:2) {#if filteredWords.length == 0}
     function create_if_block(ctx) {
     	let h3;
     	let t0;
@@ -527,7 +528,7 @@ var app = (function () {
     			t0 = text("No words containing \"");
     			t1 = text(/*searchString*/ ctx[2]);
     			t2 = text("\" found");
-    			add_location(h3, file, 170, 4, 3564);
+    			add_location(h3, file, 245, 4, 4797);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -547,7 +548,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(170:2) {#if filteredWords.length == 0}",
+    		source: "(245:2) {#if filteredWords.length == 0}",
     		ctx
     	});
 
@@ -556,36 +557,42 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
-    	let h1;
-    	let t0;
-    	let h1_style_value;
-    	let t1;
-    	let p0;
-    	let t2;
     	let a0;
-    	let t4;
+    	let img;
+    	let img_src_value;
+    	let t0;
+    	let h1;
+    	let t1;
+    	let h1_style_value;
+    	let t2;
+    	let p0;
+    	let t3;
+    	let a1;
     	let t5;
+    	let t6;
     	let p1;
-    	let t7;
-    	let h2;
-    	let t8_value = `There ${/*filteredWords*/ ctx[0].length > 1 ? "are" : "is"} ${/*filteredWords*/ ctx[0].length} word${/*filteredWords*/ ctx[0].length > 1 ? "s" : ""}!` + "";
     	let t8;
-    	let t9;
-    	let t10;
     	let div0;
     	let label;
-    	let t11;
+    	let t9;
     	let input;
+    	let t10;
+    	let h4;
+    	let t11_value = `There ${/*filteredWords*/ ctx[0].length > 1 ? "are" : "is"} ${/*filteredWords*/ ctx[0].length} word${/*filteredWords*/ ctx[0].length > 1 ? "s" : ""}!` + "";
+    	let t11;
     	let t12;
-    	let div1;
     	let t13;
+    	let div1;
     	let t14;
+    	let t15;
     	let footer;
     	let div2;
-    	let t16;
-    	let a1;
-    	let t18;
+    	let t17;
     	let a2;
+    	let t19;
+    	let a3;
+    	let t21;
+    	let div3;
     	let mounted;
     	let dispose;
     	let if_block0 = /*filteredWordsCount*/ ctx[1] > 0 && create_if_block_1(ctx);
@@ -602,126 +609,150 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			h1 = element("h1");
-    			t0 = text("Hex-Words");
-    			t1 = space();
-    			p0 = element("p");
-    			t2 = text("You're familiar with the standard\n    ");
     			a0 = element("a");
-    			a0.textContent = "CSS colour keywords,";
-    			t4 = text("\n    now learn about the ones hidden in hexcodes!");
-    			t5 = space();
+    			img = element("img");
+    			t0 = space();
+    			h1 = element("h1");
+    			t1 = text("Hex-Words");
+    			t2 = space();
+    			p0 = element("p");
+    			t3 = text("You're familiar with the standard\n    ");
+    			a1 = element("a");
+    			a1.textContent = "CSS colour keywords,";
+    			t5 = text("\n    now learn about the ones hidden in hexcodes!");
+    			t6 = space();
     			p1 = element("p");
     			p1.textContent = "Click on a colour to copy the colour's hexcode.";
-    			t7 = space();
-    			h2 = element("h2");
-    			t8 = text(t8_value);
-    			t9 = space();
-    			if (if_block0) if_block0.c();
-    			t10 = space();
+    			t8 = space();
     			div0 = element("div");
     			label = element("label");
-    			t11 = text("Search for words:\n      ");
+    			t9 = text("Search for words:\n      ");
     			input = element("input");
+    			t10 = space();
+    			h4 = element("h4");
+    			t11 = text(t11_value);
     			t12 = space();
+    			if (if_block0) if_block0.c();
+    			t13 = space();
     			div1 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t13 = space();
-    			if (if_block1) if_block1.c();
     			t14 = space();
+    			if (if_block1) if_block1.c();
+    			t15 = space();
     			footer = element("footer");
     			div2 = element("div");
     			div2.textContent = "Created by Mathew Paul.";
-    			t16 = space();
-    			a1 = element("a");
-    			a1.textContent = "Twitter";
-    			t18 = space();
+    			t17 = space();
     			a2 = element("a");
-    			a2.textContent = "Github";
-    			attr_dev(h1, "style", h1_style_value = `color:  #${/*lastCopiedColour*/ ctx[3]};`);
-    			attr_dev(h1, "class", "svelte-zb4te4");
-    			add_location(h1, file, 123, 2, 2205);
-    			attr_dev(a0, "href", "https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords");
+    			a2.textContent = "Twitter";
+    			t19 = space();
+    			a3 = element("a");
+    			a3.textContent = "Github";
+    			t21 = space();
+    			div3 = element("div");
+    			div3.textContent = "↑";
+    			if (img.src !== (img_src_value = "github.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "github logo");
+    			attr_dev(img, "width", "30");
+    			attr_dev(img, "class", "svelte-1mqu8d");
+    			add_location(img, file, 195, 4, 3362);
+    			attr_dev(a0, "class", "github svelte-1mqu8d");
+    			attr_dev(a0, "href", "https://github.com/matt-auckland/hex-words");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file, 126, 4, 2312);
-    			add_location(p0, file, 124, 2, 2266);
-    			add_location(p1, file, 133, 2, 2521);
-    			add_location(h2, file, 134, 2, 2578);
+    			add_location(a0, file, 191, 2, 3261);
+    			attr_dev(h1, "style", h1_style_value = `color:  #${/*lastCopiedColour*/ ctx[3]};`);
+    			attr_dev(h1, "class", "svelte-1mqu8d");
+    			add_location(h1, file, 197, 2, 3425);
+    			attr_dev(a1, "href", "https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords");
+    			attr_dev(a1, "target", "_blank");
+    			add_location(a1, file, 200, 4, 3532);
+    			add_location(p0, file, 198, 2, 3486);
+    			add_location(p1, file, 207, 2, 3741);
     			attr_dev(input, "name", "filter");
     			attr_dev(input, "type", "text");
-    			attr_dev(input, "class", "svelte-zb4te4");
-    			add_location(input, file, 145, 6, 2893);
+    			attr_dev(input, "class", "svelte-1mqu8d");
+    			add_location(input, file, 212, 6, 3880);
     			attr_dev(label, "for", "filter");
-    			add_location(label, file, 143, 4, 2842);
-    			attr_dev(div0, "class", "filter-cont svelte-zb4te4");
-    			add_location(div0, file, 142, 2, 2812);
-    			attr_dev(div1, "class", "words svelte-zb4te4");
-    			add_location(div1, file, 153, 2, 3037);
-    			attr_dev(main, "class", "svelte-zb4te4");
-    			add_location(main, file, 122, 0, 2196);
-    			attr_dev(div2, "class", "me svelte-zb4te4");
-    			add_location(div2, file, 175, 2, 3644);
-    			attr_dev(a1, "href", "https://twitter.com/matt4ttack");
-    			attr_dev(a1, "target", "_blank");
-    			attr_dev(a1, "class", "svelte-zb4te4");
-    			add_location(a1, file, 176, 2, 3692);
-    			attr_dev(a2, "href", "https://github.com/matt-auckland");
+    			add_location(label, file, 210, 4, 3829);
+    			attr_dev(h4, "class", "svelte-1mqu8d");
+    			add_location(h4, file, 218, 4, 4016);
+    			attr_dev(div0, "class", "filter-cont svelte-1mqu8d");
+    			add_location(div0, file, 209, 2, 3799);
+    			attr_dev(div1, "class", "words svelte-1mqu8d");
+    			add_location(div1, file, 228, 2, 4270);
+    			attr_dev(main, "class", "svelte-1mqu8d");
+    			add_location(main, file, 190, 0, 3252);
+    			attr_dev(div2, "class", "me svelte-1mqu8d");
+    			add_location(div2, file, 250, 2, 4877);
+    			attr_dev(a2, "href", "https://twitter.com/matt4ttack");
     			attr_dev(a2, "target", "_blank");
-    			attr_dev(a2, "class", "svelte-zb4te4");
-    			add_location(a2, file, 177, 2, 3763);
-    			attr_dev(footer, "class", "svelte-zb4te4");
-    			add_location(footer, file, 174, 0, 3633);
+    			attr_dev(a2, "class", "svelte-1mqu8d");
+    			add_location(a2, file, 251, 2, 4925);
+    			attr_dev(a3, "href", "https://github.com/matt-auckland");
+    			attr_dev(a3, "target", "_blank");
+    			attr_dev(a3, "class", "svelte-1mqu8d");
+    			add_location(a3, file, 252, 2, 4996);
+    			attr_dev(footer, "class", "svelte-1mqu8d");
+    			add_location(footer, file, 249, 0, 4866);
+    			attr_dev(div3, "class", "back-to-top svelte-1mqu8d");
+    			add_location(div3, file, 255, 0, 5077);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			append_dev(main, a0);
+    			append_dev(a0, img);
+    			append_dev(main, t0);
     			append_dev(main, h1);
-    			append_dev(h1, t0);
-    			append_dev(main, t1);
+    			append_dev(h1, t1);
+    			append_dev(main, t2);
     			append_dev(main, p0);
-    			append_dev(p0, t2);
-    			append_dev(p0, a0);
-    			append_dev(p0, t4);
-    			append_dev(main, t5);
+    			append_dev(p0, t3);
+    			append_dev(p0, a1);
+    			append_dev(p0, t5);
+    			append_dev(main, t6);
     			append_dev(main, p1);
-    			append_dev(main, t7);
-    			append_dev(main, h2);
-    			append_dev(h2, t8);
-    			append_dev(main, t9);
-    			if (if_block0) if_block0.m(main, null);
-    			append_dev(main, t10);
+    			append_dev(main, t8);
     			append_dev(main, div0);
     			append_dev(div0, label);
-    			append_dev(label, t11);
+    			append_dev(label, t9);
     			append_dev(label, input);
     			set_input_value(input, /*searchString*/ ctx[2]);
-    			append_dev(main, t12);
+    			append_dev(div0, t10);
+    			append_dev(div0, h4);
+    			append_dev(h4, t11);
+    			append_dev(div0, t12);
+    			if (if_block0) if_block0.m(div0, null);
+    			append_dev(main, t13);
     			append_dev(main, div1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div1, null);
     			}
 
-    			append_dev(main, t13);
+    			append_dev(main, t14);
     			if (if_block1) if_block1.m(main, null);
-    			insert_dev(target, t14, anchor);
+    			insert_dev(target, t15, anchor);
     			insert_dev(target, footer, anchor);
     			append_dev(footer, div2);
-    			append_dev(footer, t16);
-    			append_dev(footer, a1);
-    			append_dev(footer, t18);
+    			append_dev(footer, t17);
     			append_dev(footer, a2);
+    			append_dev(footer, t19);
+    			append_dev(footer, a3);
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, div3, anchor);
 
     			if (!mounted) {
     				dispose = [
     					listen_dev(input, "input", /*input_input_handler*/ ctx[8]),
-    					listen_dev(input, "keydown", /*filterWords*/ ctx[5], false, false, false)
+    					listen_dev(input, "keydown", /*filterWords*/ ctx[5], false, false, false),
+    					listen_dev(div3, "click", /*click_handler*/ ctx[9], false, false, false)
     				];
 
     				mounted = true;
@@ -732,7 +763,11 @@ var app = (function () {
     				attr_dev(h1, "style", h1_style_value);
     			}
 
-    			if (dirty & /*filteredWords*/ 1 && t8_value !== (t8_value = `There ${/*filteredWords*/ ctx[0].length > 1 ? "are" : "is"} ${/*filteredWords*/ ctx[0].length} word${/*filteredWords*/ ctx[0].length > 1 ? "s" : ""}!` + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*searchString*/ 4 && input.value !== /*searchString*/ ctx[2]) {
+    				set_input_value(input, /*searchString*/ ctx[2]);
+    			}
+
+    			if (dirty & /*filteredWords*/ 1 && t11_value !== (t11_value = `There ${/*filteredWords*/ ctx[0].length > 1 ? "are" : "is"} ${/*filteredWords*/ ctx[0].length} word${/*filteredWords*/ ctx[0].length > 1 ? "s" : ""}!` + "")) set_data_dev(t11, t11_value);
 
     			if (/*filteredWordsCount*/ ctx[1] > 0) {
     				if (if_block0) {
@@ -740,15 +775,11 @@ var app = (function () {
     				} else {
     					if_block0 = create_if_block_1(ctx);
     					if_block0.c();
-    					if_block0.m(main, t10);
+    					if_block0.m(div0, null);
     				}
     			} else if (if_block0) {
     				if_block0.d(1);
     				if_block0 = null;
-    			}
-
-    			if (dirty & /*searchString*/ 4 && input.value !== /*searchString*/ ctx[2]) {
-    				set_input_value(input, /*searchString*/ ctx[2]);
     			}
 
     			if (dirty & /*copyHex, filteredWords, clickedColour*/ 81) {
@@ -795,8 +826,10 @@ var app = (function () {
     			if (if_block0) if_block0.d();
     			destroy_each(each_blocks, detaching);
     			if (if_block1) if_block1.d();
-    			if (detaching) detach_dev(t14);
+    			if (detaching) detach_dev(t15);
     			if (detaching) detach_dev(footer);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(div3);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -867,6 +900,8 @@ var app = (function () {
     		$$invalidate(2, searchString);
     	}
 
+    	const click_handler = () => window.scrollTo(0, 0);
+
     	$$self.$$set = $$props => {
     		if ("words" in $$props) $$invalidate(7, words = $$props.words);
     	};
@@ -906,7 +941,8 @@ var app = (function () {
     		filterWords,
     		copyHex,
     		words,
-    		input_input_handler
+    		input_input_handler,
+    		click_handler
     	];
     }
 
