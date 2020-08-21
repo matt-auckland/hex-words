@@ -217,7 +217,7 @@
         on:keydown={filterWords} />
     </label>
     <h4>
-      {`There ${filteredWords.length > 1 ? 'are' : 'is'} ${filteredWords.length} word${filteredWords.length > 1 ? 's' : ''}!`}
+      {`There ${filteredWords.length == 1 ? 'is' : 'are'} ${filteredWords.length} word${filteredWords.length == 1 ? '' : 's'}!`}
     </h4>
 
     {#if filteredWordsCount > 0}
